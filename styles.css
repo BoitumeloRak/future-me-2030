@@ -8,6 +8,142 @@ nav {
     z-index: 100;
 }
 
+nav ul {
+    display: flex;
+    justify-content: center;
+    background-color: #1f1f2e;
+    padding: 1rem;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul li a.active{
+    color: #ff66cc;
+    border-bottom: 2px solid #ff66cc;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #0b0b1d;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff4fc9;
+}
+
+/* Nav Links */
+.nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #0b0b1d;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding: 1rem 0;
+    display: none;
+    gap: 1.5rem;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff4fc9;
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+}
+
+.lab-section {
+    padding: 3rem;
+    color: #fff;
+    text-align: center;
+}
+
+.lab-intro {
+    max-width: 600px;
+    margin: 0 auto 2 rem;
+    font-size: 1.2rem;
+    color: #aaa;
+}
+
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: #2c2c3c;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(255, 102, 204, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255, 105, 180, 0.6), 0 0 10px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 102, 180, 0.5);
+}
+
+footer {
+    background-color: #111;
+    color: #888;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-in-out;
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 /* RESET & BASE */
 * {
   margin: 0;
@@ -211,13 +347,10 @@ html {
 }
 
 .cursor {
-    display: inline-block;
-    background-color: #ff66cc;
-    width: 4px;
-    margin: 4px;
-    animation: blink 1s;
-    height: 1.2em;
-    vertical-align: middle;
+    color: #ff66cc;
+    font-weight: bold;
+    animation: blink 1s infinite;
+    
 }
 
 @keyframes blink {
