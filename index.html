@@ -4,67 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Future Me – 2030</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="lab.html">2030 Lab</a>
-    </nav>
+  <nav class="navbar">
+    <div class="logo">The Future Me</div>
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#dashboard">Dashboard</a></li>
+      <li><a href="lab.html">2030 Lab</a></li>
+      <li><a href="index.html#timeline">Journey</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <!-- Landing Section -->
   <section id="home">
-    <h1 id="typewriter">Welcome to 2030</h1>
+    <h1>Welcome to 2030</h1>
     <p>Hi, I'm Boitumelo Rakgole — full-stack developer, innovator, and dreamer.</p>
-    <p class="typewriter">"The future isn’t something we wait for. It’s something we create."</p>
+    <p id="typewriter"></p>
   </section>
 
   <!-- Dashboard Section -->
   <section id="dashboard">
     <h2>My Vision</h2>
+    <p>
+      In the future, I see myself thriving as a highly skilled <strong>web developer</strong> and <strong>mobile app developer</strong>, building impactful digital experiences that connect and empower users. 
+      My journey will be guided by curiosity, creativity, and a relentless drive to grow.
+    </p>
+    <p>
+      Along the way, I aim to master <strong>systems integration</strong>, develop powerful <strong>APIs</strong>, and explore the vast potential of <strong>artificial intelligence (AI)</strong> and <strong>machine learning (ML)</strong>. 
+      These technologies will not only shape the future — they will shape me into the developer I aspire to become.
+    </p>
+    <p>
+      With every line of code, I am building a future where my skills make a difference — in business, in communities, and across the world.
+    </p>
 
-    <p>
-    In the future, I see myself thriving as a highly skilled <strong>web developer</strong> and <strong>mobile app developer</strong>, building impactful digital experiences that connect and empower users. 
-    My journey will be guided by curiosity, creativity, and a relentless drive to grow.
-    </p>
-    <p>
-    Along the way, I aim to master <strong>systems integration</strong>, develop powerful <strong>APIs</strong>, and explore the vast potential of <strong>artificial intelligence (AI)</strong> and <strong>machine learning (ML)</strong>. 
-    These technologies will not only shape the future — they will shape me into the developer I aspire to become.
-    </p>
-    <p>
-    With every line of code, I am building a future where my skills make a difference — in business, in communities, and across the world.
-    </p>
+    <h3>🌐 Tech Stack</h3>
+    <ul>
+      <li>React, Vue, Angular</li>
+      <li>Node.js, Python, Java</li>
+      <li>AWS, Docker, Kubernetes</li>
+    </ul>
 
-    <div class="cards">
-        <div class="card">
-            <h3>🌐 Tech Stack</h3>
-            <ul>
-                <li>React, Vue, Angular</li>
-                <li>Node,js, Python, Java</li>
-                <li>AWS, Docker, Kubernetes</li>
-            </ul>
-        </div>
-        <div class="card">
-            <h3>🚀 Projects</h3>
-            <li>NeuroBot AI</li>
-            <li>Futurist Financal App</li>
-            <li>Virtual Africa Learning Platform</li>
-            <li>AI-Powered Doctor Filing System (Web & App)</li>
-            <li>Mixology Web & Mobile App - Virtually Create and Taste Your Own Drinks</li>
-        </div>
-        <div class="card">
-            <ul>
-                <h3>🏆 Achievements</h3>
-                <li>Top Developer SA 2029</li>
-                <li>Global Hackaton Winner</li>
-                <li>Founder of DevForChange</li>
-            </ul>
-            
-        </div>
+    <div class="card">
+      <h3>🚀 Projects</h3>
+      <ul>
+        <li>NeuroBot AI</li>
+        <li>Futurist Financial App</li>
+        <li>Virtual Africa Learning Platform</li>
+        <li>AI-Powered Doctor Filing System (Web & App)</li>
+        <li>Mixology Web & Mobile App - Create and Taste Your Own Drinks</li>
+      </ul>
     </div>
-        
+
+    <div class="card">
+      <h3>🏆 Achievements</h3>
+      <ul>
+        <li>Top Developer SA 2029</li>
+        <li>Global Hackathon Winner</li>
+        <li>Founder of DevForChange</li>
+      </ul>
+    </div>
+  </section>
 
   <!-- Timeline Section -->
   <section id="timeline">
@@ -78,37 +86,6 @@
       <li><strong>2029:</strong> Spoke at Tech Africa Summit</li>
       <li><strong>2030:</strong> Leading innovation at my own company</li>
     </ul>
-  </section>
-
-  <!-- Lab Section -->
-  <section id="lab">
-    <h2>My 2030 Lab</h2>
-    <div class="lab-projects">
-      <div class="project">
-        <h3>🧠 NeuroBot AI</h3>
-        <p>A virtual assistant that learns and evolves with you.</p>
-        <span class="badge">Tech: React + OpenAI + Firebase</span>
-      </div>
-      <div class="project">
-        <h3>📈 Futurist Finance</h3>
-        <p>An intelligent budgeting app powered by predictive AI.</p>
-        <span class="badge">Tech: Node.js + TensorFlow + MomgoDB</span>
-      </div>
-      <div class="project">
-        <h3>🌍 Virtual Africa</h3>
-        <p>A VR platform that brings African education and culture to the world.</p>
-      </div>
-      <div class="project">
-        <h3>🩺 AI Doctor Filing System</h3>
-        <p>A smart website and mobile app that simplifies doctors' filing systems using AI and machine learning for faster, error-free patient management.</p>
-        <span class="badge"> Tech: Python + ML + Electron</span>
-      </div>
-      <div class="project">
-        <h3>🍸 Mixology Creator</h3>
-        <p>An interactive Web and Mobile App that helps users mix drinks virtually and predicts flavor profiles for the perfect cocktail experience.</p>
-        <span class="badge">Tech: Vue + GPT-4 API + 3D Canvas</span>
-      </div>
-    </div>
   </section>
 
   <!-- Contact Section -->
