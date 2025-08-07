@@ -1,102 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Future Me – 2030</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Future Me</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar">
+  <header class="navbar">
     <div class="logo">The Future Me</div>
     <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
     <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#dashboard">Dashboard</a></li>
-      <li><a href="lab.html">2030 Lab</a></li>
-      <li><a href="index.html#timeline">Journey</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="timeline.html">Timeline</a></li>
+      <li><a href="lab.html">Lab</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-  </nav>
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+  </header>
 
-  <!-- Landing Section -->
-  <section id="home">
-    <h1>Welcome to 2030</h1>
-    <p>Hi, I'm Boitumelo Rakgole — full-stack developer, innovator, and dreamer.</p>
-    <p id="typewriter"></p>
-  </section>
+  <main>
+    <section class="hero-section" data-aos="fade-in">
+      <h1 id="typewriter" class="typewriter">Welcome to 2030</h1>
+      <p class="hero-intro">You're meeting the future you — a full-stack engineer, founder, and changemaker.</p>
+      <button id="music-toggle" class="music-toggle">🎵 Toggle Music</button>
+    </section>
+    <section class="lab-section" data-aos="fade-up">
+      <h2>Experiments & Prototypes</h2>
+      <p class="lab-intro">Explore small-scale projects, coding concepts, and UI ideas crafted during my learning journey.</p>
+      <div class="lab-grid">
+        <div class="project-card" data-aos="zoom-in">
+          <h3>JS Calculator</h3>
+          <p>A simple calculator built with vanilla JavaScript.</p>
+          <button onclick="window.location.href='#'">View</button>
+        </div>
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+          <h3>Color Palette Generator</h3>
+          <p>Generates random pastel color palettes using JavaScript and CSS.</p>
+          <button onclick="window.location.href='#'">View</button>
+        </div>
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+          <h3>Form Validation</h3>
+          <p>Responsive form with live field validation and error display.</p>
+          <button onclick="window.location.href='#'">View</button>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <!-- Dashboard Section -->
-  <section id="dashboard">
-    <h2>My Vision</h2>
-    <p>
-      In the future, I see myself thriving as a highly skilled <strong>web developer</strong> and <strong>mobile app developer</strong>, building impactful digital experiences that connect and empower users. 
-      My journey will be guided by curiosity, creativity, and a relentless drive to grow.
-    </p>
-    <p>
-      Along the way, I aim to master <strong>systems integration</strong>, develop powerful <strong>APIs</strong>, and explore the vast potential of <strong>artificial intelligence (AI)</strong> and <strong>machine learning (ML)</strong>. 
-      These technologies will not only shape the future — they will shape me into the developer I aspire to become.
-    </p>
-    <p>
-      With every line of code, I am building a future where my skills make a difference — in business, in communities, and across the world.
-    </p>
+  <footer>
+    © 2030 Boitumelo Rakgole | Women in Tech 🌍✨
+  </footer>
 
-    <h3>🌐 Tech Stack</h3>
-    <ul>
-      <li>React, Vue, Angular</li>
-      <li>Node.js, Python, Java</li>
-      <li>AWS, Docker, Kubernetes</li>
-    </ul>
-
-    <div class="card">
-      <h3>🚀 Projects</h3>
-      <ul>
-        <li>NeuroBot AI</li>
-        <li>Futurist Financial App</li>
-        <li>Virtual Africa Learning Platform</li>
-        <li>AI-Powered Doctor Filing System (Web & App)</li>
-        <li>Mixology Web & Mobile App - Create and Taste Your Own Drinks</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>🏆 Achievements</h3>
-      <ul>
-        <li>Top Developer SA 2029</li>
-        <li>Global Hackathon Winner</li>
-        <li>Founder of DevForChange</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Timeline Section -->
-  <section id="timeline">
-    <h2>My Journey to 2030</h2>
-    <ul class="timeline">
-      <li><strong>2024:</strong> Started at WeThinkCode</li>
-      <li><strong>2025:</strong> First internship & portfolio launch</li>
-      <li><strong>2026:</strong> Built my first full-stack app</li>
-      <li><strong>2027:</strong> Joined a global startup</li>
-      <li><strong>2028:</strong> Launched DevForChange</li>
-      <li><strong>2029:</strong> Spoke at Tech Africa Summit</li>
-      <li><strong>2030:</strong> Leading innovation at my own company</li>
-    </ul>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me in 2030</h2>
-    <form class="contact-form">
-      <input type="text" id="name" placeholder="Your Name" required />
-      <input type="email" id="email" placeholder="Your Email" required />
-      <textarea id="message" placeholder="Your Message from the Future" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

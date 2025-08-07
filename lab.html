@@ -1,69 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lab | Future Me</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="lab.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Future Me - Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    
-    <!-- NAVBAR -->
-  <nav class="navbar">
+  <header class="navbar">
     <div class="logo">The Future Me</div>
     <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
-    <ul id="nav-links" class="nav-links">
-      <li><a href="index.html">🏠 Home</a></li>
-      <li><a href="lab.html" class="active">🔬 My Lab</a></li>
-      <li><a href="#">📬 Contact</a></li>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="timeline.html">Timeline</a></li>
+      <li><a href="lab.html" class="active">Lab</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-  </nav>
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+  </header>
 
-  <section class="lab-section">
-    <h1>🔬 Welcome to My Future Lab</h1>
-    <p class="lab-intro">
-      Step into the lab where futuristic ideas come to life — powered by curiosity, AI, and passion for code.
-    </p>
-
-    <div class="lab-grid">
-      <div class="project-card">
-        <h2>🧠 NeuroBot AI</h2>
-        <p>A smart assistant that adapts to your habits, helps manage life, and evolves with your needs.</p>
+  <main>
+    <section class="lab-section" data-aos="fade-in">
+      <h1>🔬 Welcome to My Future Lab</h1>
+      <p class="lab-intro typewriter">Step into the lab where futuristic ideas come to life — powered by curiosity, AI, and passion for code.</p>
+      <div class="lab-grid">
+        <div class="project-card" data-aos="zoom-in">
+          <h3>🧠 NeuroBot AI</h3>
+          <p>A smart assistant that adapts to your habits, helps manage life, and evolves with your needs.</p>
+          <button onclick="window.location.href='#'">View</button>
+        </div>
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+          <h3>📈 Futurist Finance</h3>
+          <p>A predictive budgeting app that helps users take control of their financial future using ML models.</p>
+          <button onclick="window.location.href='#'">View</button>
+        </div>
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+          <h3>🌍 Virtual Africa</h3>
+          <p>A VR education platform that immerses students in African history, science, and creativity.</p>
+          <button onclick="window.location.href='#'">View</button>
+        </div>
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+          <h3>🩺 AI Filing System</h3>
+          <p>Web + Mobile app that simplifies a doctor's filing system through AI. Easy, fast, secure.</p>
+          <button onclick="window.location.href='#'">View</button>
+        </div>
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
+          <h3>🍸 Mixology Maker</h3>
+          <p>A web/mobile experience for mixing drinks, seeing flavors virtually, and discovering your next cocktail.</p>
+          <button onclick="window.location.href='#'">View</button>
+        </div>
       </div>
-
-      <div class="project-card">
-        <h2>📈 Futurist Finance</h2>
-        <p>A predictive budgeting app that helps users take control of their financial future using ML models.</p>
-      </div>
-
-      <div class="project-card">
-        <h2>🌍 Virtual Africa</h2>
-        <p>A VR education platform that immerses students in African history, science, and creativity.</p>
-      </div>
-
-      <div class="project-card">
-        <h2>🩺 AI Filing System</h2>
-        <p>Web + Mobile app that simplifies a doctor's filing system through AI. Easy, fast, secure.</p>
-      </div>
-
-      <div class="project-card">
-        <h2>🍸 Mixology Maker</h2>
-        <p>A web/mobile experience for mixing drinks, seeing flavors virtually, and discovering your next cocktail.</p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2030 Boitumelo Rakgole | Women in Tech 🌍✨</p>
+    © 2030 Boitumelo Rakgole | Women in Tech 🌍✨
   </footer>
 
-  <script src="lab.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
