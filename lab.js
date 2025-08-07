@@ -1,20 +1,17 @@
-// Animate project cards on scroll
+// Animate project cards
 const cards = document.querySelectorAll(".project-card");
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  { threshold: 0.3 }
-);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.3 });
 
 cards.forEach((card) => observer.observe(card));
 
-// Typing animation for lab intro
+// Typewriter effect
 const introText = document.querySelector(".lab-intro");
 const introString = introText.textContent;
 introText.textContent = "";
@@ -29,10 +26,11 @@ function typeIntro() {
 }
 typeIntro();
 
-// Hamburger menu logic
+// Hamburger menu
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("nav-links");
 
 hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
+
