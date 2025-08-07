@@ -100,38 +100,38 @@ document.addEventListener("DOMContentLoaded", () => {
     animatableElements.forEach((element) => observer.observe(element));
   }
 
-  // Project button interactions
+  // Project button interactions (optimized for responsiveness)
   const projectButtons = document.querySelectorAll(".project-btn");
   projectButtons.forEach(button => {
     button.addEventListener("click", () => {
       const project = button.getAttribute("data-project");
       if (project === "calculator") {
-        const num1 = prompt("Enter first number:");
-        const num2 = prompt("Enter second number:");
-        const op = prompt("Enter operation (+, -, *, /):");
-        if (num1 && num2 && op) {
-          const n1 = parseFloat(num1);
-          const n2 = parseFloat(num2);
-          let result;
-          switch (op) {
-            case "+": result = n1 + n2; break;
-            case "-": result = n1 - n2; break;
-            case "*": result = n1 * n2; break;
-            case "/": result = n2 !== 0 ? n1 / n2 : "Error: Division by zero"; break;
-            default: result = "Invalid operation";
-          }
-          alert(`Result: ${result}`);
+        let num1, num2, op;
+        do {
+          num1 = prompt("Enter first number:");
+          num2 = prompt("Enter second number:");
+          op = prompt("Enter operation (+, -, *, /):");
+        } while (!num1 || !num2 || !op || isNaN(parseFloat(num1)) || isNaN(parseFloat(num2)));
+        const n1 = parseFloat(num1);
+        const n2 = parseFloat(num2);
+        let result;
+        switch (op) {
+          case "+": result = n1 + n2; break;
+          case "-": result = n1 - n2; break;
+          case "*": result = n1 * n2; break;
+          case "/": result = n2 !== 0 ? n1 / n2 : "Error: Division by zero"; break;
+          default: result = "Invalid operation";
         }
+        alert(`Result: ${result}`);
       } else if (project === "palette") {
         const colors = Array(5).fill().map(() => `#${Math.floor(Math.random()*16777215).toString(16)}`);
         alert(`Color Palette: ${colors.join(", ")}`);
       } else if (project === "form") {
-        const name = prompt("Enter your name:");
-        if (name && name.trim().length > 0) {
-          alert(`Form validated! Hello, ${name}!`);
-        } else {
-          alert("Validation failed: Name is required.");
-        }
+        let name;
+        do {
+          name = prompt("Enter your name:");
+        } while (!name || name.trim().length === 0);
+        alert(`Form validated! Hello, ${name}!`);
       }
     });
   });
