@@ -27,7 +27,7 @@ nav ul li a.active{
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #0b0b1d;
+    background-color: #0f0f0f;
     color: #fff;
     position: sticky;
     top: 0;
@@ -52,6 +52,10 @@ nav ul li a.active{
     padding: 1rem 0;
     display: none;
     gap: 1.5rem;
+}
+
+.nav-links li a:hover{
+    text-shadow: 0 0 5px #00fff7;
 }
 
 .nav-links.active {
@@ -119,18 +123,21 @@ nav ul li a.active{
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 25px rgba(255, 105, 180, 0.6), 0 0 10px rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 102, 180, 0.5);
+  transform: scale(1.03);
+  box-shadow: 0 0 15px #00fff7;
+  transition: all 0.3s ease-in-out;
 }
 
+
 footer {
-    background-color: #111;
-    color: #888;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 3rem;
+  background: #0f0f0f;
+  color: #00fff7;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 15px rgba(0,255,247,0.4);
 }
+
 
 .project-card {
   opacity: 0;
@@ -272,7 +279,7 @@ button:hover {
   border-right: .15em solid #ff66c4;
   white-space: nowrap;
   width: 0;
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  animation: typing 3.5s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
   font-family: 'Courier New', Courier, monospace;
   color: #ff66cc;
 
