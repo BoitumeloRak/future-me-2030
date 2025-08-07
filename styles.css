@@ -1,5 +1,3 @@
-/* style.css - Futuristic, Glowing, Responsive */
-
 /* styles.css - Futuristic, Glowing, Responsive */
 * {
   margin: 0;
@@ -230,7 +228,7 @@ main {
   line-height: 1.6;
 }
 
-.lab-grid, .fun-facts, .achievements {
+.lab-grid, .fun-facts, .achievements, .future-achievements {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
@@ -272,7 +270,7 @@ main {
   margin-bottom: 1.5rem;
 }
 
-.project-card button {
+.project-card button, .project-btn {
   background: linear-gradient(45deg, #ff66cc, #00ffff);
   border: none;
   padding: 12px 24px;
@@ -285,7 +283,7 @@ main {
   letter-spacing: 1px;
 }
 
-.project-card button:hover {
+.project-card button:hover, .project-btn:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 15px rgba(255, 102, 204, 0.4);
 }
@@ -341,13 +339,27 @@ main {
   height: 100px;
 }
 
-.contact-form button {
+.submit-btn {
   background: linear-gradient(45deg, #ff66cc, #00ffff);
   border: none;
   padding: 12px 24px;
   color: #fff;
   border-radius: 25px;
   cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  max-width: 200px;
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 102, 204, 0.4);
+}
+
+@media (max-width: 768px) {
+  .submit-btn {
+    width: 100%;
+  }
 }
 
 footer {
@@ -388,10 +400,77 @@ footer {
   .hero-section h1, .lab-section h1, .about-section h1, .timeline-section h1, .contact-section h1 {
     font-size: 2rem;
   }
-  .lab-grid, .fun-facts, .achievements {
+  .lab-grid, .fun-facts, .achievements, .future-achievements {
     grid-template-columns: 1fr;
   }
   .typewriter {
     font-size: 1rem;
   }
+}
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #ff66cc;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #ff66cc;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  width: 45%;
+}
+
+.timeline-item:nth-child(even) {
+  margin-left: 55%;
+}
+
+.timeline-item h3 {
+  color: #00ffff;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-item p {
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+  .timeline-item {
+    width: 90%;
+    margin-left: 0;
+    margin-bottom: 2rem;
+  }
+  .timeline-item:nth-child(even) {
+    margin-left: 0;
+  }
+}
+.project-card.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
