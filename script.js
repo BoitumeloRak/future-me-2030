@@ -23,15 +23,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Music toggle
   const musicToggle = document.getElementById("music-toggle");
-  const audio = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
+  const audio = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"); // Replace with local file if needed
   audio.loop = true;
+  let isPlaying = false;
   if (musicToggle) {
     musicToggle.addEventListener("click", () => {
-      if (audio.paused) {
-        audio.play();
-        musicToggle.textContent = "🔇 Pause Music";
+      if (!isPlaying) {
+        audio.play().then(() => {
+          isPlaying = true;
+          musicToggle.textContent = "🔇 Pause Music";
+        }).catch(error => {
+          console.error("Audio play failed:", error);
+          alert("Audio playback is blocked or the file is unavailable. Please use a local MP3 file.");
+        });
       } else {
         audio.pause();
+        isPlaying = false;
         musicToggle.textContent = "🎵 Play Music";
       }
     });
