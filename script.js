@@ -100,41 +100,60 @@ document.addEventListener("DOMContentLoaded", () => {
     animatableElements.forEach((element) => observer.observe(element));
   }
 
-  // Project button interactions (optimized for responsiveness)
-  const projectButtons = document.querySelectorAll(".project-btn");
-  projectButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const project = button.getAttribute("data-project");
-      if (project === "calculator") {
-        let num1, num2, op;
-        do {
-          num1 = prompt("Enter first number:");
-          num2 = prompt("Enter second number:");
-          op = prompt("Enter operation (+, -, *, /):");
-        } while (!num1 || !num2 || !op || isNaN(parseFloat(num1)) || isNaN(parseFloat(num2)));
-        const n1 = parseFloat(num1);
-        const n2 = parseFloat(num2);
-        let result;
-        switch (op) {
-          case "+": result = n1 + n2; break;
-          case "-": result = n1 - n2; break;
-          case "*": result = n1 * n2; break;
-          case "/": result = n2 !== 0 ? n1 / n2 : "Error: Division by zero"; break;
-          default: result = "Invalid operation";
-        }
-        alert(`Result: ${result}`);
-      } else if (project === "palette") {
-        const colors = Array(5).fill().map(() => `#${Math.floor(Math.random()*16777215).toString(16)}`);
-        alert(`Color Palette: ${colors.join(", ")}`);
-      } else if (project === "form") {
-        let name;
-        do {
-          name = prompt("Enter your name:");
-        } while (!name || name.trim().length === 0);
-        alert(`Form validated! Hello, ${name}!`);
+  // Calculator Modal Logic
+  const calcSubmit = document.getElementById("calcSubmit");
+  if (calcSubmit) {
+    calcSubmit.addEventListener("click", (e) => {
+      e.preventDefault();
+      const num1 = parseFloat(document.getElementById("calcNum1").value) || 0;
+      const num2 = parseFloat(document.getElementById("calcNum2").value) || 0;
+      const op = document.getElementById("calcOp").value;
+      let result;
+      switch (op) {
+        case "+": result = num1 + num2; break;
+        case "-": result = num1 - num2; break;
+        case "*": result = num1 * num2; break;
+        case "/": result = num2 !== 0 ? num1 / num2 : "Error: Division by zero"; break;
+        default: result = "Invalid operation";
+      }
+      document.getElementById("calcResult").textContent = `Result: ${result}`;
+    });
+  }
+
+  // Color Palette Modal Logic
+  const generatePalette = document.getElementById("generatePalette");
+  const paletteContainer = document.getElementById("paletteContainer");
+  if (generatePalette && paletteContainer) {
+    function generateColors() {
+      paletteContainer.innerHTML = "";
+      const colors = Array(5).fill().map(() => `#${Math.floor(Math.random() * 16777215).toString(16)}`);
+      colors.forEach(color => {
+        const div = document.createElement("div");
+        div.className = "palette-color";
+        div.style.backgroundColor = color;
+        paletteContainer.appendChild(div);
+      });
+    }
+    generatePalette.addEventListener("click", generateColors);
+    generateColors(); // Initial generation
+  }
+
+  // Form Validation Modal Logic
+  const validationForm = document.getElementById("validationForm");
+  if (validationForm) {
+    validationForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("formName").value.trim();
+      const error = document.getElementById("formError");
+      if (name.length > 0) {
+        error.textContent = `Validated! Hello, ${name}!`;
+        error.className = "text-success";
+      } else {
+        error.textContent = "Error: Name is required.";
+        error.className = "text-danger";
       }
     });
-  });
+  }
 
   // Form submission feedback
   const form = document.querySelector(".contact-form");

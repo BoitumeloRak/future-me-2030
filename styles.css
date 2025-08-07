@@ -60,6 +60,16 @@ body.light-theme footer {
   color: #555;
 }
 
+body.light-theme .modal-content {
+  background: #f0f0f5;
+  color: #333;
+}
+
+body.light-theme .modal-header .modal-title,
+body.light-theme .btn-primary {
+  color: #fff;
+}
+
 /* Starry Background */
 .starry-bg {
   position: fixed;
@@ -92,7 +102,7 @@ body.light-theme footer {
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   box-shadow: 0 0 10px #ff66cc;
 }
 
@@ -399,6 +409,61 @@ footer {
   to { transform: translateY(0); opacity: 1 }
 }
 
+/* Custom Modal Styling */
+.modal-content {
+  background: rgba(26, 26, 46, 0.95);
+  border: 1px solid #ff66cc;
+  border-radius: 15px;
+  color: #fff;
+}
+
+.modal-header {
+  border-bottom: 1px solid #ff66cc;
+}
+
+.modal-title {
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+.btn-close {
+  filter: brightness(0) invert(1);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #ff66cc, #00ffff);
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 102, 204, 0.4);
+}
+
+.calculator input, .calculator select {
+  background: #2a2a40;
+  color: #fff;
+  border: 1px solid #ff66cc;
+}
+
+.palette-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.palette-color {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+}
+
 @media (max-width: 768px) {
   .hero-section h1, .lab-section h1, .about-section h1, .timeline-section h1, .contact-section h1 {
     font-size: 2rem;
@@ -408,5 +473,8 @@ footer {
   }
   .typewriter {
     font-size: 1rem;
+  }
+  .modal-dialog {
+    margin: 0.5rem;
   }
 }
