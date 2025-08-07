@@ -41,7 +41,7 @@ nav ul li a.active{
 }
 
 /* Nav Links */
-.nav-links {
+/* .nav-links {
     position: absolute;
     top: 70px;
     right: 0;
@@ -50,8 +50,15 @@ nav ul li a.active{
     width: 100%;
     align-items: center;
     padding: 1rem 0;
-    display: none;
+    display: flex;
     gap: 1.5rem;
+    list-style: none;
+} */
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
 }
 
 .nav-links li a:hover{
@@ -70,6 +77,20 @@ nav ul li a.active{
 
 .nav-links a:hover {
     color: #ff4fc9;
+}
+
+@media screen and (max-width: 768px)  {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #222;
+        padding: 1rem;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        width: 200px;
+    }
+    
 }
 
 /* Hamburger menu */

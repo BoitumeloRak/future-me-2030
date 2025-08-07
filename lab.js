@@ -12,11 +12,9 @@ const observer = new IntersectionObserver(
   { threshold: 0.3 }
 );
 
-cards.forEach((card) => {
-  observer.observe(card);
-});
+cards.forEach((card) => observer.observe(card));
 
-// Optional: Typing animation for intro
+// Typing animation for lab intro
 const introText = document.querySelector(".lab-intro");
 const introString = introText.textContent;
 introText.textContent = "";
@@ -30,3 +28,11 @@ function typeIntro() {
   }
 }
 typeIntro();
+
+// Hamburger menu logic
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
