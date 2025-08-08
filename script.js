@@ -78,14 +78,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Typewriter effect for lab and other pages
   const introText = document.querySelector(".typewriter");
   if (introText) {
-    const introString = introText.textContent;
+    const introString = introText.textContent.trim(); // Ensure no extra whitespace
     introText.textContent = "";
     let i = 0;
+    const speed = 50; // Consistent speed in milliseconds
     function typeIntro() {
       if (i < introString.length) {
         introText.textContent += introString.charAt(i);
         i++;
-        setTimeout(typeIntro, 50); // Adjusted speed for better readability
+        setTimeout(typeIntro, speed);
+      } else {
+        introText.style.borderRight = "none"; // Remove blinking cursor at end
       }
     }
     typeIntro();

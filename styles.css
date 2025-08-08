@@ -409,27 +409,13 @@ footer {
   margin-top: 3rem;
 }
 
+/* Removed conflicting CSS typewriter animation */
 .typewriter {
   display: inline-block;
-  overflow: hidden;
-  border-right: 0.15em solid #ff66cc;
-  white-space: nowrap;
-  width: 0;
-  animation: typing 3.5s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
-  font-family: 'Courier New', Courier, monospace;
-  color: #ff66cc;
+  /* Removed animation properties to rely on JavaScript */
 }
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink-caret {
-  0%, 100% { border-color: transparent }
-  50% { border-color: #ff66cc }
-}
-
+/* Keep other animations */
 @keyframes fadeInUp {
   from { transform: translateY(30px); opacity: 0 }
   to { transform: translateY(0); opacity: 1 }
@@ -509,7 +495,7 @@ footer {
   text-align: center;
   padding: 5px;
   transition: transform 0.3s;
-  cursor: pointer; /* Added pointer cursor */
+  cursor: pointer;
 }
 
 .color-sample:hover {
