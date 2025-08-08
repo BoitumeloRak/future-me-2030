@@ -130,24 +130,38 @@ document.addEventListener("DOMContentLoaded", () => {
   // Color Palette Modal Logic
   const generatePalette = document.getElementById("generatePalette");
   const paletteContainer = document.getElementById("paletteContainer");
-  const colorCodes = document.getElementById("colorCodes");
-  if (generatePalette && paletteContainer && colorCodes) {
+  const colorDisplay = document.getElementById("colorDisplay");
+  if (generatePalette && paletteContainer && colorDisplay) {
     function generateColors() {
       paletteContainer.innerHTML = "";
-      colorCodes.innerHTML = "";
+      colorDisplay.innerHTML = "";
       const colors = Array(5).fill().map(() => `#${Math.floor(Math.random() * 16777215).toString(16)}`);
       colors.forEach(color => {
         const div = document.createElement("div");
         div.className = "palette-color";
         div.style.backgroundColor = color;
         paletteContainer.appendChild(div);
-        const codeSpan = document.createElement("span");
-        codeSpan.textContent = `${color} `;
-        colorCodes.appendChild(codeSpan);
+
+        const displayDiv = document.createElement("div");
+        displayDiv.className = "color-sample";
+        displayDiv.style.backgroundColor = color;
+        displayDiv.style.color = getContrastColor(color); // Ensure readable text
+        displayDiv.textContent = "Color Sample";
+        displayDiv.title = color; // Hex code as tooltip
+        colorDisplay.appendChild(displayDiv);
       });
     }
     generatePalette.addEventListener("click", generateColors);
     generateColors(); // Initial generation
+  }
+
+  // Helper function to get contrasting text color
+  function getContrastColor(hexcolor) {
+    const r = parseInt(hexcolor.substr(1, 2), 16);
+    const g = parseInt(hexcolor.substr(3, 2), 16);
+    const b = parseInt(hexcolor.substr(5, 2), 16);
+    const brightness = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+    return brightness > 128 ? '#000000' : '#ffffff';
   }
 
   // Form Validation Modal Logic
