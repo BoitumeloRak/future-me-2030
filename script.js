@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function generateColors() {
       paletteContainer.innerHTML = "";
       colorDisplay.innerHTML = "";
-      const colors = Array(5).fill().map(() => `#${Math.floor(Math.random() * 16777215).toString(16)}`);
+      const colors = Array(5).fill().map(() => generatePastelColor());
       colors.forEach(color => {
         const div = document.createElement("div");
         div.className = "palette-color";
@@ -145,14 +145,23 @@ document.addEventListener("DOMContentLoaded", () => {
         const displayDiv = document.createElement("div");
         displayDiv.className = "color-sample";
         displayDiv.style.backgroundColor = color;
-        displayDiv.style.color = getContrastColor(color); // Ensure readable text
-        displayDiv.textContent = "Color Sample";
-        displayDiv.title = color; // Hex code as tooltip
+        displayDiv.style.color = getContrastColor(color);
+        displayDiv.textContent = "Sample";
+        displayDiv.title = color;
+        displayDiv.addEventListener("click", () => copyToClipboard(color));
         colorDisplay.appendChild(displayDiv);
       });
     }
     generatePalette.addEventListener("click", generateColors);
     generateColors(); // Initial generation
+  }
+
+  // Helper function to generate pastel colors
+  function generatePastelColor() {
+    const r = 128 + Math.floor(Math.random() * 127); // Start above 128 for lightness
+    const g = 128 + Math.floor(Math.random() * 127);
+    const b = 128 + Math.floor(Math.random() * 127);
+    return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
   }
 
   // Helper function to get contrasting text color
@@ -162,6 +171,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const b = parseInt(hexcolor.substr(5, 2), 16);
     const brightness = ((r * 299) + (g * 587) + (b * 114)) / 1000;
     return brightness > 128 ? '#000000' : '#ffffff';
+  }
+
+  // Helper function to copy to clipboard
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      alert(`Copied ${text} to clipboard!`);
+    }).catch(err => {
+      console.error("Failed to copy:", err);
+    });
   }
 
   // Form Validation Modal Logic
