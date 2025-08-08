@@ -130,15 +130,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // Color Palette Modal Logic
   const generatePalette = document.getElementById("generatePalette");
   const paletteContainer = document.getElementById("paletteContainer");
-  if (generatePalette && paletteContainer) {
+  const colorCodes = document.getElementById("colorCodes");
+  if (generatePalette && paletteContainer && colorCodes) {
     function generateColors() {
       paletteContainer.innerHTML = "";
+      colorCodes.innerHTML = "";
       const colors = Array(5).fill().map(() => `#${Math.floor(Math.random() * 16777215).toString(16)}`);
       colors.forEach(color => {
         const div = document.createElement("div");
         div.className = "palette-color";
         div.style.backgroundColor = color;
         paletteContainer.appendChild(div);
+        const codeSpan = document.createElement("span");
+        codeSpan.textContent = `${color} `;
+        colorCodes.appendChild(codeSpan);
       });
     }
     generatePalette.addEventListener("click", generateColors);
