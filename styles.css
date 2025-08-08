@@ -224,6 +224,7 @@ main {
   margin: 0 auto;
   padding: 2rem 0;
   text-align: center;
+  display: block; /* Ensure visibility */
 }
 
 .lab-section h1, .about-section h1, .timeline-section h1, .contact-section h1 {
@@ -409,10 +410,8 @@ footer {
   margin-top: 3rem;
 }
 
-/* Removed conflicting CSS typewriter animation */
 .typewriter {
   display: inline-block;
-  /* Removed animation properties to rely on JavaScript */
 }
 
 /* Keep other animations */

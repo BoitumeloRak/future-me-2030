@@ -78,20 +78,26 @@ document.addEventListener("DOMContentLoaded", () => {
   // Typewriter effect for lab and other pages
   const introText = document.querySelector(".typewriter");
   if (introText) {
-    const introString = introText.textContent.trim(); // Ensure no extra whitespace
+    console.log("Typewriter element found:", introText); // Debug log
+    const introString = introText.textContent.trim();
+    console.log("Original text content:", introString); // Debug log
     introText.textContent = "";
     let i = 0;
     const speed = 50; // Consistent speed in milliseconds
     function typeIntro() {
       if (i < introString.length) {
         introText.textContent += introString.charAt(i);
+        console.log("Typing:", introText.textContent); // Debug log
         i++;
         setTimeout(typeIntro, speed);
       } else {
         introText.style.borderRight = "none"; // Remove blinking cursor at end
+        console.log("Typewriter completed:", introString); // Debug log
       }
     }
     typeIntro();
+  } else {
+    console.log("No .typewriter element found."); // Debug log
   }
 
   // Animate cards and timeline items
