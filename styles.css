@@ -509,6 +509,7 @@ footer {
   text-align: center;
   padding: 5px;
   transition: transform 0.3s;
+  cursor: pointer; /* Added pointer cursor */
 }
 
 .color-sample:hover {
