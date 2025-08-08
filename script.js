@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Typewriter effect for home page
   const typewriter = document.getElementById("typewriter");
   if (typewriter) {
-    const text = "Welcome to 2030";
+    const text = "I Am 2030";
     let index = 0;
     function type() {
       if (index < text.length) {
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Typewriter effect for lab and other pages
   const introText = document.querySelector(".typewriter");
-  if (introText && !typewriter) {
+  if (introText) {
     const introString = introText.textContent;
     introText.textContent = "";
     let i = 0;
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (i < introString.length) {
         introText.textContent += introString.charAt(i);
         i++;
-        setTimeout(typeIntro, 30);
+        setTimeout(typeIntro, 50); // Adjusted speed for better readability
       }
     }
     typeIntro();
